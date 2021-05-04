@@ -17,9 +17,9 @@ void loop() {
   
   Serial.print("Ambiente = "); 
   Serial.print(MeuSensor.readAmbientTempC()); 
-  Serial.print("*C\tObjecto = "); 
+  Serial.print("ºC\tObjeto = "); 
   Serial.print(MeuSensor.readObjectTempC()); 
-  Serial.println("*C");
+  Serial.println("ºC");
   Serial.println();
   delay(500);
 
