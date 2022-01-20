@@ -5,21 +5,19 @@
 */
 #include <Wire.h> // Biblioteca para comunicação I2C
 #include <Adafruit_MLX90614.h> // Biblioteca do sensor
-Adafruit_MLX90614 MeuSensor = Adafruit_MLX90614(); // Cria um objeto MeuSensor do tipo MLX90614
+Adafruit_MLX90614 sensor_temperatura = Adafruit_MLX90614(); // Cria um objeto sensor_temperatura do tipo MLX90614
 
 void setup() {
   Serial.begin(9600); // Inicia Serial
-  MeuSensor.begin(); // Inicia MeuSensor
-
+  Serial.print("Ambiente,Objeto\n");
+  sensor_temperatura.begin(); // Inicia sensor_temperatura
 }
 
 void loop() {
   
-  Serial.print("Ambiente = "); 
-  Serial.print(MeuSensor.readAmbientTempC()); 
-  Serial.print("ºC\tObjeto = "); 
-  Serial.print(MeuSensor.readObjectTempC()); 
-  Serial.println("ºC");
+  Serial.print(sensor_temperatura.readAmbientTempC()); 
+  Serial.print(","); 
+  Serial.print(sensor_temperatura.readObjectTempC()); 
   Serial.println();
   delay(500);
 
